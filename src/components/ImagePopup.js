@@ -1,17 +1,20 @@
 import React from "react";
 
-function ImagePopup({card, onClose}) {
-  return(
-    <div className={`popup popup_big_image ${card.isOpen ? 'popup_active' : ''}`}>
+function ImagePopup({ card, onClose }) {
+  return (
+    <div
+      className={`popup popup_big_image ${card.isOpen ? "popup_active" : ""}`}
+    >
       <div className="popup__section">
-        <button 
+        <button
           type="button"
           className="popup__button-close"
           aria-label="Закрыть окно"
-          onClick={() => {onClose(card.card)}}
-        >
-        </button>
-        <img 
+          onClick={() => {
+            onClose(card.card);
+          }}
+        ></button>
+        <img
           className="popup__image"
           src={card.card.link}
           alt={card.card.name}
@@ -22,4 +25,3 @@ function ImagePopup({card, onClose}) {
   );
 }
 export default ImagePopup;
-

@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-import PopupWithForm from "./PopupWithForm"
+import React, { useState } from "react";
+import PopupWithForm from "./PopupWithForm";
 
-function EditProfilePopup({isOpen, onClose}) {
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
+function EditProfilePopup({ isOpen, onClose }) {
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
 
   function handleNameChange(e) {
     setName(e.target.value);
@@ -14,40 +14,39 @@ function EditProfilePopup({isOpen, onClose}) {
   }
 
   return (
-    <PopupWithForm 
-    name="edit-profile" 
-    title="Редактировать профиль" 
+    <PopupWithForm
+      name="edit-profile"
+      title="Редактировать профиль"
       buttonName="Сохранить"
       isOpen={isOpen}
       onClose={onClose}
-   
     >
-      <input 
+      <input
         placeholder="Ваше имя"
         value={name}
-        type="text" 
+        type="text"
         className="popup__field popup__field-title"
         minLength="2"
         maxLength="40"
         id="title"
         onChange={handleNameChange}
-        required 
+        required
       />
-      <span className="popup__input-error title-error" ></span>
-      <input 
-        type="text" 
-        placeholder="Исследователь океана" 
+      <span className="popup__input-error title-error"></span>
+      <input
+        type="text"
+        placeholder="Исследователь океана"
         className="popup__field popup__field-job"
         minLength="2"
         maxLength="200"
         id="job"
         value={description}
         onChange={handleDescriptionChange}
-        required 
+        required
       />
-      <span className="popup__input-error  job-error" ></span>
-    </PopupWithForm> 
-  )
+      <span className="popup__input-error  job-error"></span>
+    </PopupWithForm>
+  );
 }
 
-export default EditProfilePopup
+export default EditProfilePopup;
