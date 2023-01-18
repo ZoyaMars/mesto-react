@@ -2,7 +2,7 @@ function PopupWithForm({name, isOpen, children,title, buttonName, isLoading, onC
 
     return (
       <div className={`popup popup_type_${name} ${isOpen && "popup_active"}`}>
-        <div className="popup__container" onClick={onClose}>
+        <div className="popup__container">
           <button
             type="button"
             className="popup__button-close"
